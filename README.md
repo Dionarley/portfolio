@@ -65,7 +65,7 @@ Para adicionar ou modificar habilidades e projetos, edite o arquivo `index.html`
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0) - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## 📞 Contato
 
