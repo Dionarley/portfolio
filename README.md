@@ -4,7 +4,7 @@ Um portfólio pessoal moderno e responsivo para desenvolvedor e maker brasileiro
 
 ## 🚀 Visão Geral
 
-Este é um site de portfólio pessoal construído com HTML, CSS e JavaScript puro, sem dependências externas. O design é limpo, moderno e totalmente responsivo.
+Este é um site de portfólio pessoal construído com HTML, CSS e JavaScript puro. O design é limpo, moderno e totalmente responsivo.
 
 ### Características
 
@@ -13,17 +13,22 @@ Este é um site de portfólio pessoal construído com HTML, CSS e JavaScript pur
 - ⚡ Animações suaves e transições
 - 📧 Formulário de contato com validação
 - 🎯 Seções: Início, Sobre, Skills, Projetos, Contato
-- 🚫 Sem frameworks ou bibliotecas externas
+- 🐳 Dockerizado com nginx
 
 ## 📁 Estrutura do Projeto
 
 ```
 portfolio/
-├── index.html      # Página principal
-├── styles.css      # Estilos CSS
-├── script.js       # JavaScript interativo
-├── README.md       # Este arquivo
-└── LICENSE         # Licença MIT
+├── index.html          # Página principal
+├── styles.css        # Estilos CSS
+├── script.js        # JavaScript interativo
+├── Dockerfile       # Docker image
+├── nginx.conf       # Configuração nginx
+├── docker-compose.yml # Orquestração Docker
+├── DEVELOPER.md     # Documentação para desenvolvedores
+├── AGENTS.md        # Regras para agentes IA
+├── README.md        # Este arquivo
+└── LICENSE         # CC BY-SA 4.0
 ```
 
 ## 🛠️ Tecnologias Utilizadas
@@ -32,40 +37,77 @@ portfolio/
 - **CSS3** - Estilização e layout (Flexbox, Grid)
 - **JavaScript** - Interatividade e animações
 - **Font Awesome** - Ícones (via CDN)
+- **Docker + nginx** - Containerização
 
-## 📦 Como Usar
+## 🚦 Quick Start
 
-1. Clone ou baixe este repositório
-2. Abra o arquivo `index.html` em qualquer navegador web
-3. Personalize o conteúdo conforme necessário:
-   - Substitua "Dionarley R Vieira" pelo seu nome
-   - Atualize os links das redes sociais
-   - Modifique os projetos e habilidades
-   - Atualize email e telefone de contato
+### Docker (Recomendado)
+
+```bash
+# Desenvolvimento com hot reload
+docker-compose up --build
+
+# Produção
+docker-compose up -d --build portfolio-prod
+```
+
+Acesse: http://localhost:8080
+
+### Local (Sem Docker)
+
+```bash
+# Abra index.html no navegador
+# ou
+python -m http.server 8080
+```
+
+## 🐳 Docker
+
+### Comandos
+
+```bash
+# Desenvolvimento
+docker-compose up --build
+
+# Produção
+docker-compose up -d --build portfolio-prod
+
+# Ver logs
+docker-compose logs -f
+
+# Parar
+docker-compose down
+```
+
+### Ports
+
+| Serviço | Porta |
+|---------|-------|
+| portfolio | 8080 |
+| portfolio-prod | 8080 |
 
 ## 🎨 Personalização
 
 ### Cores
 
-As cores principais estão definidas no arquivo `styles.css` na seção de variáveis CSS:
+Edite as variáveis CSS em `styles.css`:
 
 ```css
 :root {
-    --primary-color: #3d4d1e;   /* Verde Militar Escuro */
-    --secondary-color: #6b7a18; /* Amarelo-Esverdeado */
-    --accent-color: #e0b418;    /* Amarelo Escuro */
-    --dark-color: #1a1f14;      /* Verde-Escuro */
+    --primary-color: #3d4d1e;
+    --secondary-color: #6b7a18;
+    --accent-color: #e0b418;
     /* ... */
 }
 ```
 
 ### Habilidades e Projetos
 
-Para adicionar ou modificar habilidades e projetos, edite o arquivo `index.html` seguindo o padrão dos cards existentes.
+Edite `index.html` seguindo o padrão dos cards existentes.
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0) - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Creative Commons Attribution-ShareAlude 4.0 (CC BY-SA 4.0) - see [LICENSE](LICENSE)
 
 ## 📞 Contato
 
